@@ -1,8 +1,17 @@
 # MEMCRASHED DDOS EXPLOIT TOOL
 
 * Author: [@037](https://twitter.com/037)
+** Patch Author: https://vk.com/alex_super228
+
+'''
+Original: https://github.com/649/Memcrashed-DDoS-Exploit
+'''
 
 This tool allows you to send forged UDP packets to Memcached servers obtained from Shodan.io
+
+### Patch
+
+In the script of the tool , I embedded a shodan key that I found in the public domain.
 
 ### Prerequisites
 
@@ -19,6 +28,9 @@ pip install scapy
 
 ```
 pip install shodan
+```
+```
+Or : python3 installer.py
 ```
 
 ### Using Shodan API
@@ -42,9 +54,8 @@ You may deploy this tool to the cloud using a light Alpine Docker image.
 > Note: Make sure to explicitly enter 'y' or 'n' to the interactive prompt
 
 ```bash
-git clone https://github.com/649/Memcrashed-DDoS-Exploit.git
-cd Memcrashed-DDoS-Exploit
-echo "SHODAN_KEY" > api.txt
+git clone https://github.com/AlexZiroYT/MemcrashedPatch.git
+cd MemcrashedPatch
 docker build -t memcrashed .
 docker run -it memcrashed
 

